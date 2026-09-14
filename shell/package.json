@@ -1,0 +1,1 @@
+{"name":"attendpro-shell","private":true,"version":"0.1.0","scripts":{"sync":"cap sync android","apk":"cd android && ./gradlew assembleDebug"},"dependencies":{"@capacitor/core":"8.5.2","@capacitor/android":"8.5.2","@capacitor-community/bluetooth-le":"8.3.0"},"devDependencies":{"@capacitor/cli":"8.5.2","esbuild":"0.25.12"}}

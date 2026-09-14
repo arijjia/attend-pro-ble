@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AttendPro</string>
+    <string name="title_activity_main">AttendPro</string>
+    <string name="package_name">ru.cit.attendpro</string>
+    <string name="custom_url_scheme">ru.cit.attendpro</string>
+</resources>

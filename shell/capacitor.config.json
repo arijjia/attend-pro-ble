@@ -1,0 +1,13 @@
+{
+  "appId": "ru.cit.attendpro",
+  "appName": "AttendPro",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  }
+}

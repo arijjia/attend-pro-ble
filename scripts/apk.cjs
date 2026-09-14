@@ -1,0 +1,7 @@
+const { execFileSync } = require('node:child_process')
+const fs = require('node:fs')
+const path = require('node:path')
+const root = path.resolve(__dirname,'..')
+execFileSync('./gradlew',['assembleDebug'],{cwd:path.join(root,'shell/android'),stdio:'inherit'})
+fs.mkdirSync(path.join(root,'dist'),{recursive:true})
+fs.copyFileSync(path.join(root,'shell/android/app/build/outputs/apk/debug/app-debug.apk'),path.join(root,'dist/AttendPro-debug.apk'))

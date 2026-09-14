@@ -1,0 +1,27 @@
+node_modules/
+/-/
+**/-/
+.DS_Store
+*.log
+
+# auto-managed framework clones (mam build fetches them itself)
+/mol/
+/hyoo/
+
+# app shell build artifacts
+shell/www/
+shell/android/.gradle/
+shell/android/app/build/
+shell/android/build/
+shell/android/local.properties/
+shell/ios/App/Pods/
+shell/ios/App/output/
+hub/data/
+*.apk
+*.ipa
+/node/
+
+/dist/
+**/-*/
+/shell/android/local.properties
+/hub/certs/

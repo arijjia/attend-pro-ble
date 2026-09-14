@@ -1,0 +1,68 @@
+$attendpro_student $mol_page
+	title \AttendPro
+	attr *
+		^
+		mol_theme \$mol_theme_dark
+	body /
+		<= Status $mol_card
+			status <= status_type \
+			rows /
+				<= Status_line $mol_paragraph
+					title <= status_line \Готов к отметке
+				<= Status_details $mol_paragraph
+					title <= status_details \Нажмите «Отметиться» рядом с хабом преподавателя
+				<= Mark_button $mol_button_major
+					enabled <= mark_enabled true
+					click? <=> mark? null
+					sub /
+						<= mark_label \Отметиться
+		<= Setup $mol_card
+			rows /
+				<= Setup_title $mol_paragraph
+					title \Онбординг устройства
+				<= Setup_hint $mol_paragraph
+					title \Преподаватель открывает консоль хаба и создаёт приглашение. Введите код и адрес хаба — устройство получит подписанный ключ на семестр.
+				<= Setup_url $mol_string
+					hint \Адрес хаба (http://192.168.1.10:8877)
+					value? <=> hub_url? \
+				<= Setup_code $mol_string
+					hint \Код приглашения (например AB3K9F)
+					value? <=> invite_code? \
+				<= Setup_actions $mol_view
+					sub <= setup_actions /
+						<= Setup_button $mol_button_major
+							enabled <= setup_enabled false
+							click? <=> setup? null
+							sub / \Получить ключ устройства
+						<= Demo_button $mol_button_minor
+							click? <=> demo_setup? null
+							sub / \Демо-режим: настроить без хаба
+		<= History_title $mol_paragraph
+			title \История отметок
+		<= History $mol_list
+			rows <= history_rows /$mol_view
+		<= Empty_hint $mol_paragraph
+			title \Отметок пока нет — они появятся здесь вместе с квитанциями хаба
+		<= Reset_button $mol_button_minor
+			click? <=> reset? null
+			sub / \Сбросить данные устройства
+	tools /
+		<= Identity_badge $mol_paragraph
+			title <= identity_line \Устройство не настроено
+		<= Transport_badge $mol_paragraph
+			title <= transport_line \Радио: —
+	-
+	Record* $attendpro_student_record
+		status <= record_type* \
+		record_title <= record_title* \
+		record_state <= record_state* \
+		record_details <= record_details* \
+
+$attendpro_student_record $mol_card
+	rows /
+		<= Title $mol_paragraph
+			title <= record_title \Пара
+		<= State $mol_paragraph
+			title <= record_state \ждём квитанцию
+		<= Details $mol_paragraph
+			title <= record_details \

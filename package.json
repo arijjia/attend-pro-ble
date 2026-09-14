@@ -1,0 +1,32 @@
+{
+  "description": "AttendPro BLE MVP: $mol PWA, Capacitor Android and teacher hub",
+  "scripts": {
+    "start": "node hub/server.cjs",
+    "start:demo": "node hub/server.cjs --no-ble",
+    "build": "node scripts/build.cjs",
+    "test": "node scripts/mam.cjs && node --test hub/*.test.cjs",
+    "android:sync": "npm --prefix shell run sync",
+    "android:apk": "node scripts/apk.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyoo-ru/mam.git"
+  },
+  "keywords": [
+    "mam"
+  ],
+  "author": "jin",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/hyoo-ru/mam/issues"
+  },
+  "homepage": "https://github.com/hyoo-ru/mam#readme",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "lru-cache": "11.2.7",
+    "mam": "1.11.960",
+    "typescript": "6.0.3"
+  }
+}

@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"jsx": "react",
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"esModuleInterop": true,
+		"noEmitHelpers": true,
+		"experimentalDecorators": true,
+		"noImplicitAny": true,
+		"alwaysStrict": true,
+		"strict": true,
+		"allowUnusedLabels": true,
+		"removeComments" : false ,
+		"sourceMap" : true ,
+		"inlineSources" : true ,
+		"declaration" : true,
+		"skipLibCheck" : false,
+		"skipDefaultLibCheck" : true,
+		"types" : ["node"]
+	},
+	"include": [
+		"**/*.ts",
+		"**/*.tsx"
+	],
+	"exclude": [
+		"**/node_modules",
+		"**/.*/",
+		"**/-/*"
+	],
+	"atom": {
+		"rewriteTsconfig": false
+	},
+	"compileOnSave": false
+}
